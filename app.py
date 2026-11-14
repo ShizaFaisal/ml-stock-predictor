@@ -21,5 +21,5 @@ if st.button("Predict karo"):
         model.fit(X, y)
         next_day = np.array([[len(data)]])
         pred = model.predict(next_day)
-        st.success(f"Kal {ticker} ka predicted Close: ${pred[0]:.2f}")
+        st.success(f"Kal {ticker} ka predicted Close: ${pred[0][0]:.2f}")
         st.line_chart(data.set_index('Date')['Close'])
